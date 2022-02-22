@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12 col-sm-4 offset-sm-3">
+      <h1>List of pets</h1>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
+        <% @pets.each do |pet| %>
+          <li><%= link_to pet.name, pet_path(pet), class: "list-group-item", style: 'text-decoration: none' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <%= link_to "Add a lost pet", new_pet_path, class: 'btn btn-primary' %>
+  </div>
+</div>
